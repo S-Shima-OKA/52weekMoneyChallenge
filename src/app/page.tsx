@@ -54,7 +54,7 @@ export default function HomePage() {
               const TD_ROW3 = document.createElement('td');
 
               TD_ROW1.classList.add(
-                'w-2/4',
+                'w-1/3',
                 'text-center',
                 'p-2',
                 'bg-gradient-to-r',
@@ -65,8 +65,8 @@ export default function HomePage() {
                 'border-b',
                 'border-white'
                 );
-              TD_ROW2.classList.add('w-1/4', 'text-center', 'p-2', 'font-bold', 'border-b', 'border-gray-400');
-              TD_ROW3.classList.add('w-2/4', 'text-right', 'p-2', 'font-bold', 'border-b', 'border-gray-400', 'px-5');
+              TD_ROW2.classList.add('w-1/3', 'text-center', 'p-2', 'font-bold', 'border-b', 'border-gray-400');
+              TD_ROW3.classList.add('w-1/3', 'text-right', 'p-2', 'font-bold', 'border-b', 'border-gray-400', 'px-5');
               TD_ROW1.innerHTML = i + '週目';
               TD_ROW2.innerHTML = DATE_ARRAY[i-1];
               TD_ROW3.innerHTML = CALC_RESULT.toLocaleString() + '円';
@@ -131,35 +131,41 @@ export default function HomePage() {
         <input
           id="PRICE"
           className="
-            rounded-l
+            rounded
             border-2
             border-gray-400
             p-1
+            w-52
           "
           type="number"
           value={price}
           onChange={(e) => setState(e.target.value)}
         />
-        <button
-          className="
-            bg-yellow-400
-            rounded-r
-            border-2
-            border-yellow-400
-            p-1
-            md:w-1/12
-            lg:md:w-2/12
-          "
-          type="button"
-          onClick={CALC_52WEEK}
-          >計算</button>
-          <p className="
+        <p className="
           error-msg
           hidden
           mt-2
           text-center
           text-red-600
           ">金額を入力してください</p>
+        <p>
+        <button
+          className="
+            bg-yellow-400
+            rounded
+            border-2
+            border-yellow-400
+            p-2
+            mt-3
+            w-1/12
+            font-bold
+            w-40
+          "
+          type="button"
+          onClick={CALC_52WEEK}
+          >貯金額を計算する</button>
+        </p>
+          
       </div>
       <p
         className="
